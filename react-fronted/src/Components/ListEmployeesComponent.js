@@ -19,6 +19,7 @@ export default function ListEmployeesComponent() {
         console.log(error)
       })
   }
+  let index = 1
 
   const deleteEmployee = (id) => {
     EmployeeService.deleteEmployee(id)
@@ -52,7 +53,7 @@ export default function ListEmployeesComponent() {
             <tbody>
               {employees.map((employee) => (
                 <tr key={employee.id}>
-                  <td>{employee.id}</td>
+                  <td>{index++}</td>
                   <td>{employee.firstName}</td>
                   <td>{employee.lastName}</td>
                   <td>{employee.emailId}</td>

@@ -3,23 +3,33 @@ package com.api.empApi.model;
 
 import lombok.*;
 
-import javax.persistence.*;
+//import javax.persistence.*;
+//import java.lang.annotation.Documented;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 @Getter
 @Setter
-@Entity
-@Table(name = "employees")
+@Document(collection = "employees")
 public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+//    @Transient
+//    public static final String SEQUENCE_NAME = "users_sequence";
 
-    @Column(name = "first_name")
+    @Id
+    private String id;
+
+//    @Field
+//    private ObjectId test;
+
+    @Field
     private String firstName;
 
-    @Column(name = "last_name")
+    @Field
     private String lastName;
 
-    @Column(name = "email_id")
+    @Field
     private String emailId;
 }

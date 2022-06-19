@@ -7,6 +7,7 @@ export default function GetEmployeeComponent() {
   const { id } = useParams()
   useEffect(() => {
     EmployeeService.getEmployeeById(id).then((response) => {
+      console.log(response.data)
       setEmployees(response.data)
     })
   }, [])
@@ -32,7 +33,7 @@ export default function GetEmployeeComponent() {
             <tbody>
               {employees.map((employee) => (
                 <tr key={employee.id}>
-                  <td>{employee.id}</td>
+                  <td>1</td>
                   <td>{employee.firstName}</td>
                   <td>{employee.lastName}</td>
                   <td>{employee.emailId}</td>

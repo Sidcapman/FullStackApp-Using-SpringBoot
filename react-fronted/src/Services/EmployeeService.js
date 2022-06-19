@@ -1,7 +1,8 @@
 import axios from 'axios'
-const base_url = 'http://localhost:8080/api/v1/employees'
 
+const base_url = process.env.REACT_APP_BASEURL
 class EmployeeService {
+  base_url = process.env.BASEURL
   getAllEmployees() {
     return axios.get(base_url)
   }
